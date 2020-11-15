@@ -1,0 +1,11 @@
+ProgramArgs = [
+    "pptpd",
+    "--fg"
+]
+ConfigurationFiles = [
+    "/etc/ppp/chap-secrets"
+]
+
+Log = "both"
+OnExit = "restart"
+RestartTimeout = "10s"

@@ -1,0 +1,20 @@
+version: "3"
+services:
+  pptpd:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ztj1993/pptpd
+    hostname: pptpd
+    container_name: pptpd
+    network_mode: host
+    privileged: true
+    restart: always
+    environment:
+      - PORT=1700
+      - HTTP_USER=admin
+      - HTTP_PASS=a12345
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - ./pptp-secrets:/etc/ppp/chap-secrets
